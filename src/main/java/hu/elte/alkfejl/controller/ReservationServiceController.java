@@ -44,10 +44,10 @@ public class ReservationServiceController {
 
     }
     
-
+    @Role({ADMIN, USER})
     @GetMapping(value = "/reservations/free/{checkin},{checkout}")
-    public List<Room> getFreeRooms(@PathVariable(value = "checkin") String checkin, @PathVariable(value = "checkout") String checkout) {
-        return reservationService.getFreeRooms(checkin, checkout);
+    public ResponseEntity<List<Room>> getFreeRooms(@PathVariable(value = "checkin") String checkin, @PathVariable(value = "checkout") String checkout) {
+        return ResponseEntity.ok(reservationService.getFreeRooms(checkin, checkout));
 
     }
 
