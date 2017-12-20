@@ -8,7 +8,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Azonosító</th>
+          <th scope="col"> </th>
           <th scope="col">Szoba név</th>
           <th scope="col">Szoba szám</th>
           <th scope="col">Szoba típus</th>
@@ -16,11 +16,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let room of rooms" (click)="startReservation(room.id)">
-          <td>{{ room.id }}</td>
+          <td><button type="button">Foglalás!</button></td>
           <td>{{ room.roomName }}</td>
           <td>{{ room.roomNumber }}</td>
           <td>{{ room.bedinfo }}</td>
-         
         </tr>
       </tbody>
     </table>
