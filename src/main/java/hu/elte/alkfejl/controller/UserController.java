@@ -35,7 +35,6 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<User> login(@RequestBody User user) {
         try {
-            
             return ResponseEntity.ok(userService.login(user));
         }
         catch (UserNotValidException e) {
