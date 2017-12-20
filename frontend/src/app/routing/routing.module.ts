@@ -25,25 +25,25 @@ const routes: Routes = [
     component: MainPageComponent
   },
   {
-    path: 'issues',
+    path: 'reservation',
     component: RoomListComponent,
     canActivate: [AuthGuard],
     data: {roles: ['USER', 'ADMIN']}
   },
   {
-    path: 'issues/new',
+    path: 'reservation/new',
     component: IssueFormComponent,
     canActivate: [AuthGuard],
     data: {roles: ['USER', 'ADMIN']}
   },
   {
-    path: 'issues/:id',
+    path: 'reservation/:id',
     component: IssueDetailComponent,
     canActivate: [AuthGuard],
     data: {roles: ['USER', 'ADMIN']}
   },
   {
-    path: 'issues/:id/edit',
+    path: 'reservation/:id/edit',
     component: IssueEditComponent,
     canActivate: [AuthGuard],
     data: {roles: ['ADMIN']}

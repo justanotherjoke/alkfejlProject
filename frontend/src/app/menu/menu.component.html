@@ -6,8 +6,8 @@
 
   <span class="fill-remaining-space" fxHide="false" fxHide.gt-sm></span>
   <div class="w-100" fxLayout="row" fxShow="false" fxShow.gt-sm>
-    <button *ngIf="authService.isLoggedIn" mat-button routerLink="/issues">Új foglalás</button>
-    <button *ngIf="authService.isLoggedIn" mat-button routerLink="/issues/new">Foglalásaim</button>
+    <button *ngIf="authService.isLoggedIn" mat-button routerLink="/reservation">Új foglalás</button>
+    <button *ngIf="authService.isLoggedIn" mat-button routerLink="/reservation/new">Foglalásaim</button>
     <span class="fill-remaining-space"></span>
     <div *ngIf="!authService.isLoggedIn">
       <button mat-button routerLink="/login">Belépés</button>
@@ -23,8 +23,8 @@
   </button>
 </mat-toolbar>
 <mat-menu xPosition="before" #menu="matMenu">
-  <button mat-menu-item routerLink="/issues">Új foglalás</button>
-  <button mat-menu-item routerLink="/issues/new">Foglalásaim</button>
+  <button mat-menu-item routerLink="/reservation">Új foglalás</button>
+  <button mat-menu-item routerLink="/reservation/new">Foglalásaim</button>
   <div *ngIf="!authService.isLoggedIn">
     <button mat-menu-item routerLink="/login">Belépés</button>
     <button mat-menu-item routerLink="/register">Regisztráció</button>

@@ -21,21 +21,21 @@
           <th scope="row">{{ issue.id }}</th>
           <td>{{ issue.location }}</td>
           <td>
-            <a [routerLink]="['/issues', issue.id]">
+            <a [routerLink]="['/reservation', issue.id]">
               {{ issue.description }}
             </a>
           </td>
           <td>{{ issue.status }}</td>
           <td>
             <a mat-icon-button *ngIf="authService.user.role === 'ADMIN'"
-              [routerLink]="['/issues', issue.id, 'edit']">
+              [routerLink]="['/reservation', issue.id, 'edit']">
               <mat-icon>edit</mat-icon>
             </a>
           </td>
         </tr>
       </tbody>
     </table>
-    <a mat-raised-button color="primary" routerLink="/issues/new">Foglalásaim</a>
+    <a mat-raised-button color="primary" routerLink="/reservation/new">Foglalásaim</a>
   </div>
 
 </div>
