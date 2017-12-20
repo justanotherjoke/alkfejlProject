@@ -99,3 +99,12 @@ Ez az alkalmazás az alkalmazások fejlesztése 2017-es őszi gyakorlatára kés
 ### Fronend
   * npm install segítségével a függőségeket telepítjük
   * npm start segítségével elindítjuk a frontendet
+  
+### Látványterv
+![Welcome Page](docs/images/1.jpg)
+![Belépés felület](docs/images/2.jpg)
+![Regisztrációs felület](docs/images/3.jpg)
+![Új foglalás](docs/images/4.jpg)
+![Foglalásaim](docs/images/5.jpg)
+![Vendég hozzáadása](docs/images/6.jpg)
+  
