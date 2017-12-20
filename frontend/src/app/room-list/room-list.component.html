@@ -15,8 +15,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let room of rooms" (click)="startReservation(room.id)">
-          <td><button type="button">Foglalás!</button></td>
+        <tr *ngFor="let room of rooms">
+          <td><button (click)="startReservation(room.id)" type="button">Foglalás!</button></td>
           <td>{{ room.roomName }}</td>
           <td>{{ room.roomNumber }}</td>
           <td>{{ room.bedinfo }}</td>

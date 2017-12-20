@@ -14,12 +14,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let reservation of reservations" (click)="navigateToGuestPage(reservation.id)">
+        <tr *ngFor="let reservation of reservations">
           <td>{{ reservation.checkin  | date }}</td>
           <td>{{ reservation.checkout | date }}</td>
           <td>{{ reservation.room.id }}</td>
           <td>{{ reservation.user.id }}</td>
-          <td><button type="button">Vendég hozzáadása!</button></td>
+          <td><button (click)="navigateToGuestPage(reservation.id)" type="button">Vendég hozzáadása!</button></td>
         </tr>
       </tbody>
     </table>
