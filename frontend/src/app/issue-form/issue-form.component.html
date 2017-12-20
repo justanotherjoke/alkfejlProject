@@ -1,0 +1,29 @@
+<h1 class="display-2">Foglalásaim</h1>
+<div class="row">
+  <div class="col">
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Azonosító</th>
+          <th scope="col">Checkin</th>
+          <th scope="col">Checkout</th>
+          <th scope="col">RoomId</th>
+          <th scope="col">UserId</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reservation of reservations" (click)="navigateToGuestPage(reservation.id)">
+          <td>{{ reservation.id }}</td>
+          <td>{{ reservation.checkin  | date }}</td>
+          <td>{{ reservation.checkout | date }}</td>
+          <td>{{ reservation.room.id }}</td>
+          <td>{{ reservation.user.id }}</td>
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+

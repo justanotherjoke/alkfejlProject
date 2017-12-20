@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+  <button mat-button routerLink="/">
+    <mat-icon>home</mat-icon>
+    Hotel 2017
+  </button>
+
+  <span class="fill-remaining-space" fxHide="false" fxHide.gt-sm></span>
+  <div class="w-100" fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button *ngIf="authService.isLoggedIn" mat-button routerLink="/issues">Új foglalás</button>
+    <button *ngIf="authService.isLoggedIn" mat-button routerLink="/issues/new">Foglalásaim</button>
+    <span class="fill-remaining-space"></span>
+    <div *ngIf="!authService.isLoggedIn">
+      <button mat-button routerLink="/login">Belépés</button>
+      <button mat-button routerLink="/register">Regisztráció</button>
+    </div>
+    <div *ngIf="authService.isLoggedIn">
+      <span>Hello, {{ authService.user.username }}!</span>
+      <button mat-button (click)="logout()">Kijelentkezés</button>
+    </div>
+  </div>
+  <button mat-icon-button [matMenuTriggerFor]="menu" fxHide="false" fxHide.gt-sm>
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-menu xPosition="before" #menu="matMenu">
+  <button mat-menu-item routerLink="/issues">Új foglalás</button>
+  <button mat-menu-item routerLink="/issues/new">Foglalásaim</button>
+  <div *ngIf="!authService.isLoggedIn">
+    <button mat-menu-item routerLink="/login">Belépés</button>
+    <button mat-menu-item routerLink="/register">Regisztráció</button>
+  </div>
+  <div *ngIf="authService.isLoggedIn">
+    <button mat-menu-item (click)="logout()">Kijelentkezés</button>
+  </div>
+</mat-menu>

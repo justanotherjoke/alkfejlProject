@@ -1,0 +1,33 @@
+<h1 class="display-2">Új foglalás</h1>
+
+<div class="row">
+  <div class="col">
+    <my-date-range-picker [options]="myDateRangePickerOptions"
+    (dateRangeChanged)="refreshGridData($event)"></my-date-range-picker>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Azonosító</th>
+          <th scope="col">Szoba név</th>
+          <th scope="col">Szoba szám</th>
+          <th scope="col">Szoba típus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let room of rooms" (click)="startReservation(room.id)">
+          <td>{{ room.id }}</td>
+          <td>{{ room.roomName }}</td>
+          <td>{{ room.roomNumber }}</td>
+          <td>{{ room.bedinfo }}</td>
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+
+
+

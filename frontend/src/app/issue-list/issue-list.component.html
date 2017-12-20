@@ -1,0 +1,41 @@
+<h1 class="display-2">Új foglalás</h1>
+
+<div class="row">
+  <div class="col">
+
+    <!--<status-filter [status]="selectedStatus" (onChange)="onFilterChange($event)"></status-filter>-->
+    <input type="text" class="form-control"> 
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Location</th>
+          <th scope="col">Description</th>
+          <th scope="col">Status</th>
+          <th scope="col">Functions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let issue of filteredIssues">
+          <th scope="row">{{ issue.id }}</th>
+          <td>{{ issue.location }}</td>
+          <td>
+            <a [routerLink]="['/issues', issue.id]">
+              {{ issue.description }}
+            </a>
+          </td>
+          <td>{{ issue.status }}</td>
+          <td>
+            <a mat-icon-button *ngIf="authService.user.role === 'ADMIN'"
+              [routerLink]="['/issues', issue.id, 'edit']">
+              <mat-icon>edit</mat-icon>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <a mat-raised-button color="primary" routerLink="/issues/new">Foglalásaim</a>
+  </div>
+
+</div>

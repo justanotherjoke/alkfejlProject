@@ -1,0 +1,35 @@
+<h1 class="display-2">My issues</h1>
+
+<div class="row">
+  <div class="col">
+
+    <status-filter [status]="selectedStatus" (onChange)="onFilterChange($event)"></status-filter>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">RoomId</th>
+          <th scope="col">UserId</th>
+          <th scope="col">Timestamp</th>
+          <th scope="col">Checkin</th>
+          <th scope="col">Checkout</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reservation of reservations">
+
+          <th scope="row">{{ reservation.id }}</th>
+          <td>{{ reservation.checkin }}</td>
+          <td>{{ reservation.checkout }}</td>
+          <td>{{ reservation.timeStamp }}</td>
+          <td>{{ reservation.room_id }}</td>
+          <td>{{ reservation.user_id }}</td>
+         
+        </tr>
+      </tbody>
+    </table>
+    <a mat-raised-button color="primary" routerLink="/issues/new">Foglalásaim</a>
+  </div>
+
+</div>
